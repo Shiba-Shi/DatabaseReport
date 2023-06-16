@@ -47,11 +47,11 @@ try:
         print()
     
     
-    sql4 = ("""
+    sql3 = ("""
     INSERT INTO 產品狀態 (交易ID, 追蹤號, 包裹狀態, 當前狀態)
     VALUES ('001817', 123457, '運送中', '未送達');
     """)
-    cursor.execute(sql4)
+    cursor.execute(sql3)
     print("已創建替換商品的新包裹")
 
 finally:
