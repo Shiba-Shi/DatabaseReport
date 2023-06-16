@@ -46,21 +46,13 @@ try:
         print("產品數量:", result[2])
         print()
     
-    sql3 = """
-    SELECT 交易ID
-    FROM 產品狀態
-    WHERE 追蹤號 = '123456';
-    """
     
-    cursor.execute(sql3)
-    results = cursor.fetchall()
-    for result in results:
-        sql4 = """
-        INSERT INTO 產品狀態 (交易ID, 追蹤號, 當前狀況, 包裹狀態)
-        VALUES (""" + result[0] + """, 123457, '運送中');
-        """
-        cursor.execute(sql4)
-        print("已創建替換商品的新包裹")
+    sql4 = ("""
+    INSERT INTO 產品狀態 (交易ID, 追蹤號, 包裹狀態, 當前狀態)
+    VALUES ('001817', 123457, '運送中', '未送達');
+    """)
+    cursor.execute(sql4)
+    print("已創建替換商品的新包裹")
 
 finally:
     cursor.close()
